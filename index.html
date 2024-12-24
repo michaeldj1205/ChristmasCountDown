@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christmas Countdown</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js/dist/fireworks.js"></script>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="background-music" loop>
+    <source src="test1.mp3" type="audio/mp3">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Toggle Music Button -->
+  <button id="toggle-music" class="music-button">🔊</button>
+
+  <!-- Countdown Container -->
+  <div id="countdown-container" class="countdown-container">
+    <h1 class="title">🎄 Christmas Countdown 🎄</h1>
+    <div id="countdown" class="countdown">
+      <div class="time"><span id="days">0</span> Days</div>
+      <div class="time"><span id="hours">0</span> Hours</div>
+      <div class="time"><span id="minutes">0</span> Minutes</div>
+      <div class="time"><span id="seconds">0</span> Seconds</div>
+    </div>
+    <div class="test-section">
+      <label for="test-date">Test Date (YYYY-MM-DD):</label>
+      <input type="date" id="test-date" />
+      <button id="test-button" class="test-button">Test Countdown</button>
+    </div>
+  </div>
+
+  <!-- Greeting Page -->
+  <div id="greeting-page" class="greeting-page hidden">
+    <h1 class="greeting-text">🎉 Merry Christmas! 🎉</h1>
+    <canvas id="fireworks-canvas"></canvas>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
