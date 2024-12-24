@@ -29,9 +29,9 @@ toggleMusicButton.addEventListener('click', () => {
 });
 
 // Countdown Functionality
-function updateCountdown(testDate) {
+function updateCountdown() {
   const philippinesTime = new Date().toLocaleString("en-US", { timeZone: "Asia/Manila" });
-  const now = testDate ? new Date(testDate) : new Date(philippinesTime);
+  const now = new Date(philippinesTime);
   const christmas = new Date(now.getFullYear(), 11, 25); // December 25
 
   if (now.getMonth() === 11 && now.getDate() > 25) {
@@ -90,23 +90,8 @@ function startFireworks() {
   setTimeout(() => fireworks.stop(), 20000); // Stop fireworks after 20 seconds
 }
 
-document.getElementById('test-button').addEventListener('click', () => {
-  const testDate = document.getElementById('test-date').value;
-  if (testDate) {
-    const testDateObj = new Date(testDate);
-    if (testDateObj.getMonth() === 11 && testDateObj.getDate() === 25) {
-      clearInterval(countdownInterval); // Stop the countdown interval
-      goToGreetingPage(); // Trigger the greeting page
-    } else {
-      alert('The test date must be December 25 to trigger the fireworks and music!');
-    }
-  } else {
-    alert('Please select a test date.');
-  }
-});
-
 // Start the countdown interval
-countdownInterval = setInterval(() => updateCountdown(), 1000);
+countdownInterval = setInterval(updateCountdown, 1000);
 
 // Initial call to set the correct time
 updateCountdown();
